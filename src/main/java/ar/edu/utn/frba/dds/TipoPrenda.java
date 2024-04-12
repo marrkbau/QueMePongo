@@ -1,31 +1,26 @@
 package ar.edu.utn.frba.dds;
 
+import static ar.edu.utn.frba.dds.Categoria.PARTE_INFERIOR;
+import static ar.edu.utn.frba.dds.Categoria.PARTE_SUPERIOR;
 
 import java.util.Objects;
 
-import static ar.edu.utn.frba.dds.Categoria.PARTE_SUPERIOR;
 
 public class TipoPrenda {
+  static TipoPrenda PANTALON = new TipoPrenda(PARTE_INFERIOR);
+  static TipoPrenda POLLERA = new TipoPrenda(PARTE_INFERIOR);
+  static TipoPrenda BLUSA = new TipoPrenda(PARTE_SUPERIOR);
+  static TipoPrenda CAMISA = new TipoPrenda(PARTE_SUPERIOR);
 
 
+  Categoria categoria;
 
-  //  static String REMERA = "remera";
-    static String PANTALON = "pantalon";
-    static String POLLERA = "pollera";
-    static String CAMISA_MANGA_CORTA = "camisa-manga-corta";
-    static String BLUSA = "blusa";
+  public Categoria Categoria() {
+    return categoria;
+  }
 
+  public TipoPrenda(Categoria categoria) {
+    this.categoria = Objects.requireNonNull(categoria, "Categoria no debe ser nula");
+  }
 
-    Categoria categoria;
-
-    public TipoPrenda(Categoria categoria){
-        this.categoria = Objects.requireNonNull(categoria, "Categoria no debe ser nula");
-
-    }
-
-    public Categoria Categoria(){
-        return categoria;
-    }
-
-    static TipoPrenda CAMISA = new TipoPrenda(PARTE_SUPERIOR);
 }
