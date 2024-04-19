@@ -2,10 +2,10 @@ package ar.edu.utn.frba.dds;
 
 public class Aspecto {
 
-  public Color colorPrimario;
-  public Color colorSecundario;
-  public TramaDeTela trama;
-  public Material material;
+  private final Color colorPrimario;
+  private final Color colorSecundario;
+  private TramaDeTela trama;
+  private final Material material;
 
   public Aspecto(Color colorPrimario, Color colorSecundario, TramaDeTela trama, Material material) {
 
@@ -25,6 +25,19 @@ public class Aspecto {
     this.material = material;
   }
 
+  public Color getColorPrimario() {
+    return colorPrimario;
+  }
 
+  public Color getColorSecundario() {
+    return colorSecundario;
+  }
 
+  public TramaDeTela getTrama() {
+    return trama;
+  }
+
+  public Material getMaterial() {
+    return material;
+  }
 }

@@ -20,31 +20,35 @@ public class Prenda {
   @Override
   public String toString() {
 
-    if (aspecto.colorSecundario ==  null) {
+    if (aspecto.getColorSecundario() ==  null) {
       return "Prenda{"
           +
-          "tipoPrenda=" + tipoPrenda
+          "tipoPrenda: " + tipoPrenda
           +
-          ", material: " + aspecto.material
+          ", categoria: " + tipoPrenda.getCategoria()
           +
-          ", tramado: " + aspecto.trama
+          ", material: " + aspecto.getMaterial()
           +
-          " color primario: " + aspecto.colorPrimario
+          ", tramado: " + aspecto.getTrama()
+          +
+          ", color primario: " + aspecto.getColorPrimario()
           +
           '}';
     }
 
     return "Prenda{"
         +
-        "tipoPrenda=" + tipoPrenda
+        "tipoPrenda: " + tipoPrenda
         +
-        ", material: " + aspecto.material
+        ", categoria: " + tipoPrenda.getCategoria()
         +
-        ", tramado: " + aspecto.trama
+        ", material: " + aspecto.getMaterial()
         +
-        " color primario: " + aspecto.colorPrimario
+        ", tramado: " + aspecto.getTrama()
         +
-        " color secundario: " + aspecto.colorSecundario
+        ", color primario: " + aspecto.getColorPrimario()
+        +
+        ", color secundario: " + aspecto.getColorSecundario()
         +
         '}';
   }
