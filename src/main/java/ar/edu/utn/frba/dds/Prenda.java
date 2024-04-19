@@ -3,48 +3,33 @@ package ar.edu.utn.frba.dds;
 
 public class Prenda {
 
-  //Primer requerimiento: especificar el tipo de prenda que estoy cargando
   TipoPrenda tipoPrenda;
+  Aspecto aspecto;
 
-  //Segundo requerimiento: indicar el color de prenda principal
-  Color colorPrendaPrimario;
+  public Prenda(TipoPrenda tipo, Aspecto aspecto) {
 
-  Color colorPrendaSecundario;
-
-  Material material;
-
-  public Prenda(TipoPrenda tipo, Color colorPrimario, Color colorSecundario, Material material) {
-
-    if (colorPrimario == null) {
-      throw new IllegalArgumentException("El color primario es obligatorio");
-    }
     if (tipo == null) {
       throw new IllegalArgumentException("El tipo de prenda es obligatorio");
     }
-    if (material == null) {
-      throw new IllegalArgumentException("El material es obligatorio");
-    }
 
-    this.material = material;
     this.tipoPrenda = tipo;
-    this.colorPrendaPrimario = colorPrimario;
-    this.colorPrendaSecundario = colorSecundario;
 
+    this.aspecto = aspecto;
   }
 
   @Override
   public String toString() {
 
-    if (this.colorPrendaSecundario == null) {
+    if (aspecto.colorSecundario ==  null) {
       return "Prenda{"
           +
           "tipoPrenda=" + tipoPrenda
           +
-          ", categoria=" + tipoPrenda.categoria
+          ", material: " + aspecto.material
           +
-          ", colorPrendaPrimario=" + colorPrendaPrimario
+          ", tramado: " + aspecto.trama
           +
-          ", material=" + material
+          " color primario: " + aspecto.colorPrimario
           +
           '}';
     }
@@ -53,13 +38,13 @@ public class Prenda {
         +
         "tipoPrenda=" + tipoPrenda
         +
-        ", categoria=" + tipoPrenda.categoria
+        ", material: " + aspecto.material
         +
-        ", colorPrendaPrimario=" + colorPrendaPrimario
+        ", tramado: " + aspecto.trama
         +
-        ", colorPrendaSecundario=" + colorPrendaSecundario
+        " color primario: " + aspecto.colorPrimario
         +
-        ", material=" + material
+        " color secundario: " + aspecto.colorSecundario
         +
         '}';
   }

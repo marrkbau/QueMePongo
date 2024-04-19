@@ -6,6 +6,4 @@ public enum TramaDeTela {
   LUNARES,
   A_CUADROS,
   ESTAMPADO
-
-
 }
