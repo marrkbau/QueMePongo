@@ -1,6 +1,9 @@
 package ar.edu.utn.frba.dds;
 
-public enum TramaDeTela {
+/**
+ * This is a Javadoc.com
+ */
+public enum Trama {
   LISA,
   RAYADA,
   LUNARES,

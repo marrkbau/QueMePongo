@@ -1,20 +1,26 @@
 package ar.edu.utn.frba.dds;
 
+/**
+ * This is a Javadoc.com
+ */
 public class Aspecto {
 
   private final Color colorPrimario;
   private final Color colorSecundario;
-  private TramaDeTela trama;
+  private Trama trama;
   private final Material material;
 
-  public Aspecto(Color colorPrimario, Color colorSecundario, TramaDeTela trama, Material material) {
+  /**
+   * This is a Javadoc.com
+   */
+  public Aspecto(Color colorPrimario, Color colorSecundario, Trama trama, Material material) {
 
     this.trama = trama;
     if (colorPrimario == null) {
       throw new IllegalArgumentException("El color primario es obligatorio");
     }
     if (trama == null) {
-      this.trama = TramaDeTela.LISA;
+      this.trama = Trama.LISA;
     }
     if (material == null) {
       throw new IllegalArgumentException("El tipo de material es obligatoria");
@@ -33,7 +39,7 @@ public class Aspecto {
     return colorSecundario;
   }
 
-  public TramaDeTela getTrama() {
+  public Trama getTrama() {
     return trama;
   }
 

@@ -1,19 +1,22 @@
 package ar.edu.utn.frba.dds;
 
-
+/**
+ * This is a Javadoc.com
+ */
 public class Prenda {
 
   TipoPrenda tipoPrenda;
   Aspecto aspecto;
 
+  /**
+   * This is a Javadoc.com
+   */
   public Prenda(TipoPrenda tipo, Aspecto aspecto) {
 
     if (tipo == null) {
       throw new IllegalArgumentException("El tipo de prenda es obligatorio");
     }
-
     this.tipoPrenda = tipo;
-
     this.aspecto = aspecto;
   }
 
