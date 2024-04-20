@@ -11,14 +11,19 @@ public class Main {
    */
   public static void main(String[] args) {
 
-    Aspecto cueroConLunares = new Aspecto(Color.AZUL, null, Trama.LUNARES, Material.CUERO);
-    Aspecto poliesterLiso = new Aspecto(Color.AMARILLO, Color.BLANCO, null, Material.POLIESTER);
+    Borrador borrador = new Borrador();
 
-    Prenda remeraAzul = new Prenda(TipoPrenda.REMERA, cueroConLunares);
-    Prenda remeraAmarillaRallada = new Prenda(TipoPrenda.REMERA, poliesterLiso);
+    borrador.setTipoPrenda(TipoPrenda.REMERA);
+    borrador.setColorPrimario(Color.BLANCO);
+    borrador.setMaterial(TipoMaterial.ALGODON);
+    borrador.setColorSecundario(Color.AZUL);
 
-    System.out.println(remeraAzul.toString());
-    System.out.println(remeraAmarillaRallada.toString());
+    Prenda prenda = borrador.buildPrenda();
+
+    System.out.println("Prenda creada:{\n   " + prenda.getTipoPrenda() +  "\n   "
+        + prenda.getTrama() + "\n   " + prenda.getMaterial()
+        + "\n   " + prenda.getColorPrimario() + "\n   " + prenda.getColorSecundario() + "\n }");
+
   }
 
 }
