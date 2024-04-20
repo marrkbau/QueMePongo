@@ -9,7 +9,7 @@ public enum TipoPrenda {
   BUZO(Categoria.PARTE_SUPERIOR),
   PANTALON(Categoria.PARTE_INFERIOR);
 
-  final Categoria categoria;
+  private final Categoria categoria;
 
   TipoPrenda(Categoria categoria) {
     this.categoria = categoria;
