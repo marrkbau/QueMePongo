@@ -1,0 +1,75 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+enum Color {
+AZUL,
+MARRON,
+NARANJA,
+AMARILLO,
+ROJO,
+ROSA,
+NEGRO,
+BLANCO
+}
+
+enum TipoMaterial {
+POLIESTER,
+ALGODON,
+JEAN,
+CUERO
+}
+enum Categoria {
+PARTE_SUPERIOR,
+PARTE_INFERIOR,
+CALZADO,
+ACCESORIO
+}
+
+enum TipoPrenda {
+REMERA
+BUZO
+PANTALON
+}
+
+enum Trama {
+LISA,
+RAYADA,
+LUNARES,
+A_CUADROS,
+ESTAMPADO
+}
+
+class Prenda {
+tipoPrenda : TipoPrenda
+material : TipoMaterial
+colorPrimario : Color
+colorSecundario : Color
+trama : Trama
+}
+
+class Borrador {
+tipoPrenda : TipoPrenda
+material : TipoMaterial
+colorPrimario : Color
+colorSecundario : Color
+trama : Trama
+
+setTrama(Trama)
+setColorPrimario(Color)
+setColorSecundario(Color)
+setMaterial(TipoMaterial)
+setTipoPrenda(TipoPrenda)
+buildPrenda() : Prenda
+}
+
+Prenda --> Color
+Prenda --> TipoMaterial
+Prenda --> TipoPrenda
+Prenda --> Trama
+TipoPrenda --> Categoria
+Borrador ..> Prenda : <Creates>
+
+
+
+@enduml
