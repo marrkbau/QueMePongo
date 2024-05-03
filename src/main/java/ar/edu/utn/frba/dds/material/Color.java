@@ -1,4 +1,4 @@
-package ar.edu.utn.frba.dds;
+package ar.edu.utn.frba.dds.material;
 
 // Acá se hace un enum por ahora porque es simple y no me piden que sea de alguna manera
 // entonces no voy a hacer alg mas sofisticado.

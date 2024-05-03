@@ -30,6 +30,7 @@ enum TipoPrenda {
 REMERA
 BUZO
 PANTALON
+ZAPATOS
 }
 
 enum Trama {
@@ -63,11 +64,17 @@ setTipoPrenda(TipoPrenda)
 buildPrenda() : Prenda
 }
 
+class Sugerencia {
+List<Prenda>
+
+}
+
 Prenda --> Color
 Prenda --> TipoMaterial
 Prenda --> TipoPrenda
 Prenda --> Trama
 TipoPrenda --> Categoria
+Sugerencia -> Prenda
 Borrador ..> Prenda : <Creates>
 
 

@@ -1,4 +1,10 @@
-package ar.edu.utn.frba.dds;
+package ar.edu.utn.frba.dds.borrador;
+
+import ar.edu.utn.frba.dds.material.Color;
+import ar.edu.utn.frba.dds.material.TipoMaterial;
+import ar.edu.utn.frba.dds.material.Trama;
+import ar.edu.utn.frba.dds.prenda.Prenda;
+import ar.edu.utn.frba.dds.prenda.TipoPrenda;
 
 /**
  * This is a Javadoc.com
