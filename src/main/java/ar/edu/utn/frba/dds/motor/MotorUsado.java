@@ -6,7 +6,7 @@ public class MotorUsado {
 
   static MotorUsado INSTANCE;
 
-  static MotorUsado getInstance() {
+  public static MotorUsado getInstance() {
     return INSTANCE;
   }
 

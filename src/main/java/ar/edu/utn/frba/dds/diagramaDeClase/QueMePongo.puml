@@ -47,6 +47,7 @@ material : TipoMaterial
 colorPrimario : Color
 colorSecundario : Color
 trama : Trama
+
 }
 
 class Borrador {
@@ -65,8 +66,21 @@ buildPrenda() : Prenda
 }
 
 class Sugerencia {
-List<Prenda>
+parteSuperior : Prenda
+parteInferior : Prenda
+calzado : Prenda
+}
 
+class Usuario {
+prendas : List<Prenda>
+edad : Integer
+motorDeSugerencias : MotorDeSugerencias
+}
+
+enum Formalidad {
+FORMAL
+INFORMAL
+NEUTRO
 }
 
 Prenda --> Color
