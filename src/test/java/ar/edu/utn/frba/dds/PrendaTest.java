@@ -8,6 +8,7 @@ import ar.edu.utn.frba.dds.exceptions.TipoPrendaObligatorioException;
 import ar.edu.utn.frba.dds.material.Color;
 import ar.edu.utn.frba.dds.material.Trama;
 import ar.edu.utn.frba.dds.prenda.Categoria;
+import ar.edu.utn.frba.dds.prenda.Formalidad;
 import ar.edu.utn.frba.dds.prenda.Prenda;
 import ar.edu.utn.frba.dds.material.TipoMaterial;
 import ar.edu.utn.frba.dds.prenda.TipoPrenda;
@@ -22,7 +23,7 @@ public class PrendaTest {
   @BeforeEach
   public void init() {
     prenda = new Prenda(TipoPrenda.REMERA, TipoMaterial.ALGODON, Color.BLANCO, null,
-        null);
+        null, Formalidad.FORMAL);
   }
 
   @Test
@@ -43,21 +44,21 @@ public class PrendaTest {
   @Test
   public void prendaSinTipoMaterial() {
     assertThrows(MaterialObligatorioException.class, () -> {
-      new Prenda(TipoPrenda.PANTALON, null, Color.NEGRO, null, null);
+      new Prenda(TipoPrenda.PANTALON, null, Color.NEGRO, null, null, Formalidad.FORMAL);
     });
   }
 
   @Test
   public void prendaSinColorPrimario() {
     assertThrows(ColorPrimarioObligatorioException.class, () -> {
-      new Prenda(TipoPrenda.PANTALON, TipoMaterial.POLIESTER, null, null, null);
+      new Prenda(TipoPrenda.PANTALON, TipoMaterial.POLIESTER, null, null, null, Formalidad.FORMAL);
     });
   }
 
   @Test
   public void prendaSinTipoDePrenda() {
     assertThrows(TipoPrendaObligatorioException.class, () -> {
-      new Prenda(null, TipoMaterial.POLIESTER, Color.BLANCO, null, null);
+      new Prenda(null, TipoMaterial.POLIESTER, Color.BLANCO, null, null, Formalidad.FORMAL);
     });
   }
 

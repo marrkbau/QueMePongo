@@ -7,28 +7,14 @@ import java.util.List;
 
 public class Sugerencia {
 
-  List<Prenda> prendasSugeridas = new ArrayList<>();
+  Prenda prendaSuperior;
+  Prenda prendaInferior;
+  Prenda calzado;
 
-  public void agregarPrendaSugerir(Prenda prenda) {
-
-    validarPrendaSugerida(prenda);
-
-
-    prendasSugeridas.add(prenda);
-  }
-
-  public void validarPrendaSugerida(Prenda prenda) {
-
-    if (prendasSugeridas.stream()
-        .anyMatch(prenda1 -> prenda1.getTipoPrenda()
-            .getCategoria() == prenda.getTipoPrenda().getCategoria())) {
-
-      throw new CategoriaDePrendaYaSugeridaException("Este tipo de prendas ya sugerida");
-    }
-  }
-
-  public List<Prenda> getPrendasSugeridas() {
-    return prendasSugeridas;
+  public Sugerencia(Prenda prendaSuperior, Prenda prendaInferior, Prenda calzado) {
+    this.prendaInferior = prendaSuperior;
+    this.prendaInferior = prendaInferior;
+    this.calzado = calzado;
   }
 
 }

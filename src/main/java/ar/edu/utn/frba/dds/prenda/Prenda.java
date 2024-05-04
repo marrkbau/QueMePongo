@@ -19,12 +19,14 @@ public class Prenda {
   private final Color colorSecundario;
   private final Trama trama;
 
+  private final Formalidad formalidad;
+
 
   /**
    * This is a Javadoc.com
    */
   public Prenda(TipoPrenda tipo, TipoMaterial material, Color colorPrimario, Color colorSecundario,
-                Trama trama) {
+                Trama trama, Formalidad formalidad) {
 
     validarTipoPrenda(tipo);
     validarColorPrimario(colorPrimario);
@@ -36,6 +38,7 @@ public class Prenda {
     this.colorSecundario = colorSecundario;
     this.material = material;
     this.tipoPrenda = tipo;
+    this.formalidad = formalidad;
   }
 
   public void validarMaterial(TipoMaterial material) {
@@ -54,6 +57,10 @@ public class Prenda {
     if (tipo == null) {
       throw new TipoPrendaObligatorioException("El tipo de prenda es obligatorio");
     }
+  }
+
+  public Formalidad getFormalidad() {
+    return formalidad;
   }
 
   public TipoPrenda getTipoPrenda() {
