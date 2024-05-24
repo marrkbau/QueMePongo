@@ -3,6 +3,7 @@ package ar.edu.utn.frba.dds.borrador;
 import ar.edu.utn.frba.dds.material.Color;
 import ar.edu.utn.frba.dds.material.TipoMaterial;
 import ar.edu.utn.frba.dds.material.Trama;
+import ar.edu.utn.frba.dds.prenda.Formalidad;
 import ar.edu.utn.frba.dds.prenda.Prenda;
 import ar.edu.utn.frba.dds.prenda.TipoPrenda;
 
@@ -16,7 +17,15 @@ public class Borrador {
   private Color colorSecundario;
   private Trama trama = Trama.LISA;
   private TipoPrenda tipoPrenda;
+  private Formalidad formalidad;
 
+  public Formalidad getFormalidad() {
+    return formalidad;
+  }
+
+  public void setFormalidad(Formalidad formalidad) {
+    this.formalidad = formalidad;
+  }
 
   public TipoMaterial getMaterial() {
     return material;
@@ -93,7 +102,7 @@ public class Borrador {
     }
 
     return new Prenda(this.tipoPrenda, this.material, this.colorPrimario,
-        this.colorSecundario, this.trama);
+        this.colorSecundario, this.trama, this.formalidad);
   }
 
 }

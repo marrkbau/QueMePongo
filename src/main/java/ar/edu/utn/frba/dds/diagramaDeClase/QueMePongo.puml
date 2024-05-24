@@ -83,13 +83,33 @@ INFORMAL
 NEUTRO
 }
 
+abstract MotorDeSugerencias {
+   generarSugerenciaCon(List<Prenda> prendas, Integer edad): List<Sugerencia>
+}
+
+class MotorDeSugerenciasBasico {
+}
+
+class MotorSugerenciasFormal {
+}
+
+class MotorUsado {
+
+}
+
 Prenda --> Color
 Prenda --> TipoMaterial
 Prenda --> TipoPrenda
 Prenda --> Trama
+Prenda --> Formalidad
+Usuario --> Prenda : *
+Usuario --> MotorDeSugerencias
 TipoPrenda --> Categoria
 Sugerencia -> Prenda
 Borrador ..> Prenda : <Creates>
+MotorDeSugerenciasBasico ..|> MotorDeSugerencias
+MotorSugerenciasFormal ..|> MotorDeSugerencias
+MotorUsado --> MotorDeSugerencias
 
 
 

@@ -11,27 +11,33 @@ import java.util.Set;
 public abstract class MotorDeSugerencias {
 
 
-  List<Sugerencia> generarSugerenciasCon(List<Prenda> prendas, Integer edad) {
+  public List<Sugerencia> generarSugerenciasCon(List<Prenda> prendas, Integer edad, Double temperatura) {
 
-    List<Prenda> prendasSuperiores = prendas.stream()
-        .filter(prenda -> prenda.getTipoPrenda().getCategoria() == Categoria.PARTE_SUPERIOR)
-        .toList();
-
-    List<Prenda> prendasInferiores = prendas.stream()
-        .filter(prenda -> prenda.getTipoPrenda().getCategoria() == Categoria.PARTE_INFERIOR)
-        .toList();
-
-    List<Prenda> calzados = prendas.stream()
-        .filter(prenda -> prenda.getTipoPrenda().getCategoria() == Categoria.CALZADO)
-        .toList();
+    List<Prenda> prendasSuperiores = filtrarPrendasPorTipo(prendas, Categoria.PARTE_SUPERIOR);
+    List<Prenda> prendasInferiores = filtrarPrendasPorTipo(prendas, Categoria.PARTE_INFERIOR);
+    List<Prenda> prendasCalzados = filtrarPrendasPorTipo(prendas, Categoria.CALZADO);
 
 
-    List<List<Prenda>> combinacionesDePrendas = Lists
-        .cartesianProduct(prendasSuperiores, prendasInferiores, calzados);
+    List<Prenda> prendasSuperioresAdecuadas =
+        filtrarPrendasPorTemperatura(prendasSuperiores, temperatura);
+    List<Prenda> prendasInferioresAdecuadas =
+        filtrarPrendasPorTemperatura(prendasInferiores, temperatura);
+    List<Prenda> prendasCalzadosAdecuadas =
+        filtrarPrendasPorTemperatura(prendasCalzados, temperatura);
+    List<List<Prenda>> combinacionesDePrendas = Lists.cartesianProduct(prendasSuperioresAdecuadas,
+        prendasInferioresAdecuadas, prendasCalzadosAdecuadas);
 
-
-    return combinacionesDePrendas.stream()
-        .map(combinacion ->
-            new Sugerencia(combinacion.get(0), combinacion.get(1), combinacion.get(2))).toList();
+    return combinacionesDePrendas.stream().map(combinacion ->
+        new Sugerencia(combinacion.get(0), combinacion.get(1), combinacion.get(2))).toList();
   }
+
+  private List<Prenda> filtrarPrendasPorTipo(List<Prenda> prendas, Categoria categoria) {
+    return prendas.stream().filter(p -> p.getTipoPrenda().getCategoria() == categoria).toList();
+  }
+
+  private List<Prenda> filtrarPrendasPorTemperatura(List<Prenda> prendas, Double temperature) {
+    return prendas.stream().filter(p -> p.getTemperaturaMaximaAdecuada() >= temperature).toList();
+  }
+
+
 }

@@ -7,13 +7,13 @@ import java.util.List;
 
 public class MotorDeSugerenciasFormal extends MotorDeSugerencias {
 
-  @Override
-  List<Sugerencia> generarSugerenciasCon(List<Prenda> prendas, Integer edad) {
 
-    List<Prenda> prendasValidas = edad < 55 ? prendas.stream()
-          .filter(prenda -> !(prenda.getFormalidad() == Formalidad.FORMAL)).toList() : prendas;
+  public List<Sugerencia> generarSugerenciasFormalesCon(List<Prenda> prendas, Integer edad, Double temperature) {
+    return generarSugerenciasCon(prendasValidas(prendas, edad), edad, temperature);
+  }
 
-    return super.generarSugerenciasCon(prendasValidas, edad);
+  private List<Prenda> prendasValidas(List<Prenda> prendas, Integer edad) {
+    return edad > 55 ? prendas.stream().filter(p -> p.getFormalidad() == Formalidad.FORMAL).toList() : prendas;
   }
 
 }

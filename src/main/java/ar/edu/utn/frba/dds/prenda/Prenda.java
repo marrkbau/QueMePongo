@@ -19,6 +19,8 @@ public class Prenda {
   private final Color colorSecundario;
   private final Trama trama;
 
+  private Integer temperaturaMaximaAdecuada;
+
   private final Formalidad formalidad;
 
 
@@ -57,6 +59,10 @@ public class Prenda {
     if (tipo == null) {
       throw new TipoPrendaObligatorioException("El tipo de prenda es obligatorio");
     }
+  }
+
+  public Integer getTemperaturaMaximaAdecuada() {
+    return this.temperaturaMaximaAdecuada;
   }
 
   public Formalidad getFormalidad() {
