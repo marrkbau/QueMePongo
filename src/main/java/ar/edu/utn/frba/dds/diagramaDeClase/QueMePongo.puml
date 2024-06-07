@@ -110,6 +110,12 @@ Borrador ..> Prenda : <Creates>
 MotorDeSugerenciasBasico ..|> MotorDeSugerencias
 MotorSugerenciasFormal ..|> MotorDeSugerencias
 MotorUsado --> MotorDeSugerencias
+Usuario ---> Ropero
+Ropero -> MotorSugerenciasFormal
+MotorSugerenciasFormal -> Sugerencia
+Usuario --> AccuWeatherAPI
+Ropero --> Propuesta : *
+Propuesta --> Prenda
 
 
 

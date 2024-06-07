@@ -16,7 +16,9 @@ import java.util.List;
 public class Usuario {
 
   private List<Ropero> roperos;
-  private List<Propuesta> propuestas;
+
+  private Ropero roperoDelQueSoyDuenio;
+
   Integer edad;
   MotorDeSugerenciasFormal motorDeSugerenciasFormalidad;
 
@@ -28,7 +30,6 @@ public class Usuario {
     this.servicioMetereologico =
         new ServicioMetereologico(new AccuWeatherAPI(), ciudad, Duration.ofHours(3));
     this.roperos = new ArrayList<Ropero>();
-    this.propuestas = new ArrayList<Propuesta>();
   }
 
 
@@ -43,17 +44,8 @@ public class Usuario {
             servicioMetereologico.getTemperature());
   }
 
-  public void agregarRopero(Ropero ropero) {
-    this.roperos.add(ropero);
-  }
 
-  public void quitarRopero(Ropero ropero) {
-    this.roperos.remove(ropero);
-  }
 
-  public void proponer(Propuesta propuesta, Ropero ropero) {
-    ropero.agregarPropuesta(propuesta);
-  }
 
   public void cancelarPropuesta(Propuesta propuesta, Ropero ropero) {
     ropero.mostrarPropuestas().remove(propuesta);
@@ -63,9 +55,7 @@ public class Usuario {
     return ropero.mostrarPropuestas();
   }
 
-  public void aceptarPropuesta(Propuesta propuesta, Ropero ropero) {//TODO mejorar este método
-    ropero.aceptarPropuesta(propuesta);
-  }
+
 
 
 }

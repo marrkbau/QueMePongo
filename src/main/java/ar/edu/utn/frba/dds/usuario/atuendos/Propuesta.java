@@ -2,22 +2,14 @@ package ar.edu.utn.frba.dds.usuario.atuendos;
 
 import ar.edu.utn.frba.dds.prenda.Prenda;
 
-public class Propuesta {
+public interface Propuesta {
 
-  private Prenda prenda;
-  private boolean agregar;
 
-  public Propuesta(Prenda prenda, boolean agregar) {
-    this.prenda = prenda;
-    this.agregar = agregar;
-  }
+  void aceptar(Ropero ropero);
 
-  public Prenda getPrenda() {
-    return prenda;
-  }
+  void rechazar(Ropero ropero);
 
-  public boolean isAgregar() {
-    return agregar;
-  }
+  void deshacer(Ropero ropero);
+
 
 }
